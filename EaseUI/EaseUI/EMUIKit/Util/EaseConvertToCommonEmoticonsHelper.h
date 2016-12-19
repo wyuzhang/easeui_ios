@@ -14,8 +14,20 @@
 
 @interface EaseConvertToCommonEmoticonsHelper : NSObject
 
+/*!
+ @method
+ @brief 系统emoji表情转换为表情编码
+ @param text   待转换的文字
+ @return  转换后的文字
+ */
 + (NSString *)convertToCommonEmoticons:(NSString *)text;
 
+/*!
+ @method
+ @brief 表情编码转换为系统emoji表情
+ @param text   待转换的文字
+ @return  转换后的文字
+ */
 + (NSString *)convertToSystemEmoticons:(NSString *)text;
 
 @end
