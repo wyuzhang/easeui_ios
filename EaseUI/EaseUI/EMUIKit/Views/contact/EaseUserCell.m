@@ -30,6 +30,7 @@ CGFloat const EaseUserCellPadding = 10;
 + (void)initialize
 {
     // UIAppearance Proxy Defaults
+    /** @brief 默认配置 */
     EaseUserCell *cell = [self appearance];
     cell.titleLabelColor = [UIColor blackColor];
     cell.titleLabelFont = [UIFont systemFontOfSize:18];
@@ -51,6 +52,12 @@ CGFloat const EaseUserCellPadding = 10;
 
 #pragma mark - private layout subviews
 
+/*!
+ @method
+ @brief 加载视图
+ @discussion
+ @return
+ */
 - (void)_setupSubview
 {
     _avatarView = [[EaseImageView alloc] init];
@@ -71,6 +78,12 @@ CGFloat const EaseUserCellPadding = 10;
 
 #pragma mark - Setup Constraints
 
+/*!
+ @method
+ @brief 设置avatarView的约束
+ @discussion
+ @return
+ */
 - (void)_setupAvatarViewConstraints
 {
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.avatarView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTop multiplier:1.0 constant:EaseUserCellPadding]];
@@ -80,6 +93,12 @@ CGFloat const EaseUserCellPadding = 10;
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.avatarView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.avatarView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]];
 }
 
+/*!
+ @method
+ @brief 设置titleLabel的约束
+ @discussion
+ @return
+ */
 - (void)_setupTitleLabelConstraints
 {
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.titleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTop multiplier:1.0 constant:EaseUserCellPadding]];
@@ -155,6 +174,7 @@ CGFloat const EaseUserCellPadding = 10;
 }
 
 #pragma mark - action
+
 - (void)headerLongPress:(UILongPressGestureRecognizer *)longPress
 {
     if (longPress.state == UIGestureRecognizerStateBegan) {

@@ -422,6 +422,13 @@
 
 #pragma mark - private bottom view
 
+/*!
+ @method
+ @brief 调整toolBar的高度
+ @discussion
+ @param bottomHeight 底部菜单的高度
+ @result
+ */
 - (void)_willShowBottomHeight:(CGFloat)bottomHeight
 {
     CGRect fromFrame = self.frame;
@@ -447,6 +454,13 @@
     }
 }
 
+/*!
+ @method
+ @brief 切换菜单视图
+ @discussion
+ @param bottomView 菜单视图
+ @result
+ */
 - (void)_willShowBottomView:(UIView *)bottomView
 {
     if (![self.activityButtomView isEqual:bottomView]) {

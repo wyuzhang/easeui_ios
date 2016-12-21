@@ -144,6 +144,12 @@
     [self setupEmotion];
 }
 
+/*!
+ @method
+ @brief 设置表情
+ @discussion 加载默认表情，如果子类实现了dataSource的自定义表情回调，同时会加载自定义表情
+ @result
+ */
 - (void)setupEmotion
 {
     if ([self.dataSource respondsToSelector:@selector(emotionFormessageViewController:)]) {
@@ -202,6 +208,7 @@
 
 #pragma mark - chatroom
 
+
 - (void)saveChatroom:(EMChatroom *)chatroom
 {
     NSString *chatroomName = chatroom.subject ? chatroom.subject : @"";
@@ -216,6 +223,12 @@
     }
 }
 
+/*!
+ @method
+ @brief 加入聊天室
+ @discussion
+ @result
+ */
 - (void)joinChatroom:(NSString *)chatroomId
 {
     __weak typeof(self) weakSelf = self;
@@ -353,6 +366,12 @@
 
 #pragma mark - private helper
 
+/*!
+ @method
+ @brief tableView滑动到底部
+ @discussion 
+ @result
+ */
 - (void)_scrollViewToBottom:(BOOL)animated
 {
     if (self.tableView.contentSize.height > self.tableView.frame.size.height)
